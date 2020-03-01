@@ -14,8 +14,10 @@ spec:
             - --memcached-hostname=memcached.flux
             - --memcached-service=
             - --ssh-keygen-dir=/var/fluxd/keygen
+            - --git-poll-interval=1m
+            - --git-sync-tag=kind
             - --git-branch=master
-            - --git-path=env/nonprod
-            - --git-user=ionfury
+            - --git-path=clusters/kind/live
+            - --git-user="ionfury"
             - --git-email=ionfury@users.noreply.github.com
             - --git-url=git@github.com:ionfury/k8s
