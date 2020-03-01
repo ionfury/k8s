@@ -1,0 +1,13 @@
+resources:
+  - deployment.yaml
+
+commonLabels:
+  app.kubernetes.io/component: arsgladiibot
+  app.kubernetes.io/name: arsgladiibot
+
+commonAnnotations:
+  app.kubernetes.io/code-repository: https://github.com/ionfury/arsgladiibot
+
+images:
+  - name: PATCH_ME
+    newName: arsgladiibot

@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arsgladiibot
+spec:
+  template:
+    spec:
+      containers:
+      - name: arsgladiibot
+        image: PATCH_ME
+        imagePullPolicy: Always
+        env:
+        - name: token
+          value: PATCH_ME

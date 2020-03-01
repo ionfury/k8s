@@ -1,0 +1,2 @@
+creation_rules:
+  - azure_keyvault: https://sops-d66185f135194728.vault.azure.net/keys/sops-key/9e093dd599994711b0b52ab0d2baf6e5

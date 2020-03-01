@@ -1,0 +1,24 @@
+namespace: context-arsgladiibot-nonprod-v1
+
+resources:
+- namespace.yaml
+
+commonLabels:
+  app.kubernetes.io/part-of: arsgladiibot-nonprod/v1
+
+patches:
+  - path: patch-deployment-strategy.yaml
+    target:
+      kind: Deployment
+  - target:
+      name: arsgladiibot
+      kind: Deployment
+    path: patch-deployment-token.dec.yaml
+    
+bases: 
+- ../../../manifests/arsgladiibot/v1
+
+images:
+  - name: arsgladiibot
+    newName: ionfuryacr.azurecr.io/arsgladiibot
+    newTag: eda0c34d90b09df8ba89907dbfbd32fc21b671b9

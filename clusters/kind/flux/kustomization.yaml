@@ -4,28 +4,4 @@ bases:
   - github.com/fluxcd/flux/deploy
 
 patchesStrategicMerge:
-  - patch.yaml
-
-patches:
-  - target: 
-      name: flux
-      kind: Deployment
-      namespace: flux
-    patch: |
-      - op: add
-        path: /spec/template/spec/volumes/-
-        value:
-          name: extrakeys
-          secret:
-            secretName: extrakeys
-
-  - target: 
-      name: flux
-      kind: Deployment
-      namespace: flux
-    patch: |
-      - op: add
-        path: /spec/template/spec/containers/0/volumeMounts/-
-        value:
-          name: extrakeys
-          mountPath: /extrakeys
+  - patch.dec.yaml

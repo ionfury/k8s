@@ -1,0 +1,5 @@
+bases:
+- ../../../contexts/arsgladiibot-nonprod/v1
+
+commonLabels:
+  app.kubernetes.io/managed-by: flux
