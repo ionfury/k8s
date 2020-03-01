@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: namespace-operator
+spec:
+  template:
+    spec:
+      serviceAccountName: namespace-operator
+      containers:
+      - name: namespace-operator
+        image: namespace-operator
+        command:
+        - namespace-operator
+        imagePullPolicy: Always
+        env:
+        - name: WATCH_NAMESPACE
+          value: ""
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: OPERATOR_NAME
+          value: "namespace-operator"
+        volumeMounts:
+        - name: pull-secret-volume
+          mountPath: /usr/local/etc
+      volumes:
+      - name: pull-secret-volume
+        configMap:
+          name: pull-secrets

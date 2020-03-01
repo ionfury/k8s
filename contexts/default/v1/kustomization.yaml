@@ -1,0 +1,24 @@
+namespace: default
+
+# Define workloads
+bases:
+- ../../../manifests/namespace-operator/v1
+
+# Define deployment strategy
+patches:
+- path: patch-deployment-strategy.yaml
+  target:
+    kind: Deployment
+
+# Define workload context
+patchesStrategicMerge:
+- patch-workload-context-namespace-operator-config.yaml
+- patch-workload-context-namespace-operator-service-account.yaml
+
+# Define deployment images
+images:
+- name: namespace-operator
+  newName: ionfuryacr.azurecr.io/namespace-operator
+  newTag: v1
+
+

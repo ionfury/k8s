@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pull-secrets
+data:
+  pull-secrets: |
+    [{"Name": "acr-secret", "Namespace": "default"}]
