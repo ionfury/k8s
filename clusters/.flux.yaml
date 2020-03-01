@@ -1,5 +1,5 @@
 version: 1
-commandUpdated:
+patchUpdated:
   generators:
     #  Run decrypt files on the /cluster folder and down.
     - command: . /scripts/sops-decrypt-files.sh > /dev/null
