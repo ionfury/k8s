@@ -4,7 +4,7 @@ resources:
 - namespace.yaml
 
 commonLabels:
-  app.kubernetes.io/part-of: arsgladiibot-nonprod/v1
+  app.kubernetes.io/part-of: arsgladiibot-nonprod-v1
 
 patches:
   - path: patch-deployment-strategy.yaml
