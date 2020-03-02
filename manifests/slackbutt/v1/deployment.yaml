@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slackbutt
+spec:
+  template:
+    spec:
+      containers:
+      - name: slackbutt
+        image: PATCH_ME
+        imagePullPolicy: Always
+        env:
+        - name: database_connection_string
+          value: PATCH_ME
+        - name: database_password
+          value: PATCH_ME
+        - name: database_username
+          value: PATCH_ME
+        - name: token
+          value: PATCH_ME

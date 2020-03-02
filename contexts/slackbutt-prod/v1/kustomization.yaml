@@ -1,0 +1,24 @@
+namespace: context-slackbutt-prod-v1
+
+resources:
+- namespace.yaml
+
+commonLabels:
+  app.kubernetes.io/part-of: slackbutt-prod-v1
+
+patches:
+  - path: patch-deployment-strategy.yaml
+    target:
+      kind: Deployment
+  - target:
+      name: slackbutt
+      kind: Deployment
+    path: patch-deployment-env.dec.yaml
+    
+bases: 
+- ../../../manifests/slackbutt/v1
+
+images:
+  - name: slackbutt
+    newName: ionfuryacr.azurecr.io/arsgladiibot
+    newTag: master-87d6f371577440e4d24ce4b657b62dd54ad79485

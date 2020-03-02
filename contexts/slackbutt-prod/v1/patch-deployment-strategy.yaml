@@ -1,0 +1,7 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: not-important
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tagAll: glob:master-*

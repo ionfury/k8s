@@ -1,0 +1,13 @@
+resources:
+  - deployment.yaml
+
+commonLabels:
+  app.kubernetes.io/component: slackbutt
+  app.kubernetes.io/name: slackbutt
+
+commonAnnotations:
+  app.kubernetes.io/code-repository: https://github.com/ionfury/slackbutt-v2
+
+images:
+  - name: PATCH_ME
+    newName: slackbutt
