@@ -2,6 +2,6 @@ version: 1
 patchUpdated:
   generators:
     #  Run decrypt files on the /cluster folder and down.
-    #- command: . /scripts/sops-decrypt-files.sh > /dev/null
+    - command: . /scripts/sops-decrypt-files.sh > /dev/null
     - command: kustomize build .
   patchFile: flux-patch.yaml

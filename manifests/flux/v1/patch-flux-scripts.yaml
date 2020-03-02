@@ -1,0 +1,12 @@
+- op: add
+  path: /spec/template/spec/volumes/-
+  value: 
+    name: scripts
+    configMap:
+      name: flux-scripts
+      defaultMode: 436
+- op: add
+  path: /spec/template/spec/containers/0/volumeMounts/-
+  value:
+    name: scripts
+    mountPath: /scripts

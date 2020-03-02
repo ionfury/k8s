@@ -7,4 +7,4 @@ kubectl create secret docker-registry acr-secret \
     --docker-server=ionfuryacr.azurecr.io \
     --docker-username=ionfuryacr \
     --docker-password=$(az acr credential show -n ionfuryacr --query "passwords[0].value" -o tsv) \
-    --docker-email=ionfury@gmail.com
+    --docker-email=tnowak@plex.com
