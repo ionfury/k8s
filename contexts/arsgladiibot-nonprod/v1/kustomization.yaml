@@ -10,10 +10,10 @@ patches:
   - path: patch-deployment-strategy.yaml
     target:
       kind: Deployment
- # - target:
- #     name: arsgladiibot
- #     kind: Deployment
- #   path: patch-deployment-token.dec.yaml
+  - target:
+      name: arsgladiibot
+      kind: Deployment
+    path: patch-deployment-token.dec.yaml
     
 bases: 
 - ../../../manifests/arsgladiibot/v1
