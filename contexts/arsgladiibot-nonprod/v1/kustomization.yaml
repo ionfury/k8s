@@ -13,7 +13,7 @@ patches:
   - target:
       name: arsgladiibot
       kind: Deployment
-    path: patch-deployment-token.dec.yaml
+    path: patch-deployment-token.enc.yaml
     
 bases: 
 - ../../../manifests/arsgladiibot/v1
