@@ -1,7 +1,7 @@
 namespace: flux
 
 bases:
-  - ../../../manifests/flux/v1
+  - github.com/fluxcd/flux/deploy
 
 patchesStrategicMerge:
   - patch.dec.yaml

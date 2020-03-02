@@ -5,6 +5,3 @@ metadata:
 data:
   pull-secrets: |
     [{"Name": "acr-secret", "Namespace": "default"}]
-#- op: replace
-#  path: data/pull-secrets
-#  value:     [{"Name": "acr-secret", "Namespace": "default"}]
