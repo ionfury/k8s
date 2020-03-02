@@ -1,0 +1,24 @@
+namespace: context-iondiscord-prod-v1
+
+resources:
+- namespace.yaml
+
+commonLabels:
+  app.kubernetes.io/part-of: iondiscord-prod-v1
+
+patches:
+  - path: patch-deployment-strategy.yaml
+    target:
+      kind: Deployment
+  - target:
+      name: iondiscord
+      kind: Deployment
+    path: patch-deployment-env.dec.yaml
+    
+bases: 
+- ../../../manifests/iondiscord/v1
+
+images:
+  - name: iondiscord
+    newName: ionfuryacr.azurecr.io/iondiscord
+    newTag: master-6948964c52f4f7c03cef366dff3cf1fbfd10e8f8
