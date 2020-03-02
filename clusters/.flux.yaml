@@ -3,5 +3,5 @@ patchUpdated:
   generators:
     #  Run decrypt files on the /cluster folder and down.
     #- command: . /scripts/sops-decrypt-files.sh > /dev/null
-    - command: for I in $(find . -name '*.enc.yaml'); do sops -d "$I" > "${I%*enc.yaml}dec.yaml"; done && kustomize build .
+    - command: for I in $(find ../../../ -name '*.enc.yaml'); do sops -d "$I" > "${I%*enc.yaml}dec.yaml"; done && kustomize build .
   patchFile: flux-patch.yaml
