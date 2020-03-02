@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iondiscord
+spec:
+  template:
+    spec:
+      containers:
+      - name: iondiscord
+        image: PATCH_ME
+        imagePullPolicy: Always
+        env:
+        - name: auth_url
+          value: PATCH_ME
+        - name: bot_admin_role
+          value: PATCH_ME
+        - name: client_id
+          value: PATCH_ME
+        - name: client_secret
+          value: PATCH_ME
+        - name: database_connection_string
+          value: PATCH_ME
+        - name: database_password
+          value: PATCH_ME
+        - name: database_username
+          value: PATCH_ME
+        - name: game
+          value: PATCH_ME
+        - name: prefix
+          value: PATCH_ME
+        - name: token
+          value: PATCH_ME

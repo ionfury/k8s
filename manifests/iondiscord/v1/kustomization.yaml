@@ -1,0 +1,13 @@
+resources:
+  - deployment.yaml
+
+commonLabels:
+  app.kubernetes.io/component: iondiscord
+  app.kubernetes.io/name: iondiscord
+
+commonAnnotations:
+  app.kubernetes.io/code-repository: https://github.com/ionfury/IonDiscord
+
+images:
+  - name: PATCH_ME
+    newName: iondiscord
