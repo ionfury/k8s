@@ -1,31 +1,18 @@
 namespace: flux
 
 bases:
-  - github.com/fluxcd/flux/deploy
+- github.com/fluxcd/flux/deploy
+
+commonLabels:
+  app.kubernetes.io/managed-by: kubectl
+  app.kubernetes.io/name: fluxcd
+  app.kubernetes.io/instance: cluster-flux
+  app.kubernetes.io/component: delivery
+  app.kubernetes.io/part-of: flux
 
 patchesStrategicMerge:
-  - patch.yaml
+- patch.dec.yaml
 
-patches:
-  - target: 
-      name: flux
-      kind: Deployment
-      namespace: flux
-    patch: |
-      - op: add
-        path: /spec/template/spec/volumes/-
-        value:
-          name: extrakeys
-          secret:
-            secretName: extrakeys
-
-  - target: 
-      name: flux
-      kind: Deployment
-      namespace: flux
-    patch: |
-      - op: add
-        path: /spec/template/spec/containers/0/volumeMounts/-
-        value:
-          name: extrakeys
-          mountPath: /extrakeys
+images:
+- name: docker.io/fluxcd/flux:1.18.0
+  newName: raspbernetes/flux
